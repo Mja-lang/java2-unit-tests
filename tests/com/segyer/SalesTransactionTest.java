@@ -1,6 +1,5 @@
 package com.segyer;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,11 +9,12 @@ import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SalesTransactionTest {
-    private SalesTransaction transaction;
-    Random r;
+    public SalesTransaction transaction;
+    public Random r;
 
     @BeforeEach
     void setUp() {
@@ -22,9 +22,6 @@ class SalesTransactionTest {
         r = new Random();
     }
 
-    @AfterEach
-    void tearDown() {
-    }
 
     @Test
     void getTransactionId() {
@@ -179,10 +176,5 @@ class SalesTransactionTest {
                 transaction.setQuantitySold(-1);
             }
         });
-    }
-
-    @Test
-    void compareTo() {
-
     }
 }
